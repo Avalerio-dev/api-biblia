@@ -3,6 +3,8 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
+use App\Http\Controllers\WordController;
+
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -17,3 +19,8 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+//////////////    Words
+Route::get('/word', [WordController::class, 'index']);
+Route::get('/word/{id}', [WordController::class, 'show']);
+Route::get('/word/{bookNum}/{chNum}/{verseNum}', [WordController::class, 'find']);
