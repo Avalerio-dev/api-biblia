@@ -4,6 +4,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\WordController;
+use App\Http\Controllers\BookController;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,3 +25,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 Route::get('/word', [WordController::class, 'index']);
 Route::get('/word/{id}', [WordController::class, 'show']);
 Route::get('/word/{bookNum}/{chNum}/{verseNum}', [WordController::class, 'find']);
+
+//////////////    Books
+Route::get('/book', [BookController::class, 'index']);
+Route::get('/book/{id}', [BookController::class, 'show']);
