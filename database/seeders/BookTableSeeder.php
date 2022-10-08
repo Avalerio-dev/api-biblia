@@ -20,7 +20,7 @@ class BookTableSeeder extends Seeder
         array('name' => 'Exodo', 'ab' => 'Ex','category' => 1, 'canon' => 1),
         array('name' => 'Levítico', 'ab' => 'Lv','category' => 1, 'canon' => 1),
         array('name' => 'Números', 'ab' => 'Nm','category' => 1, 'canon' => 1),        
-        array('name' => 'Deuterenomio', 'Dt' => 'Gn','category' => 1, 'canon' => 1),
+        array('name' => 'Deuterenomio', 'ab' => 'Dt','category' => 1, 'canon' => 1),
         array('name' => 'Josúe', 'ab' => 'Jos','category' => 2, 'canon' => 1),
         array('name' => 'Jueces', 'ab' => 'Jue','category' => 2, 'canon' => 1),
         array('name' => 'Rut', 'ab' => 'Rut','category' => 2, 'canon' => 1),
@@ -81,7 +81,7 @@ class BookTableSeeder extends Seeder
         array('name' => '2 Juan', 'ab' => '2 Jn','category' => 8, 'canon' => 1),
         array('name' => '3 Juan', 'ab' => '3 Jn','category' => 8, 'canon' => 1),
         array('name' => 'Judas', 'ab' => 'Jds','category' => 8, 'canon' => 1),
-        array('name' => 'Apocalipsis', 'Ap' => 'Gn','category' => 9, 'canon' => 1),
+        array('name' => 'Apocalipsis', 'ab' => 'Ap','category' => 9, 'canon' => 1),
 
     );
         Book::insert($book);
