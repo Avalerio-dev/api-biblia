@@ -25,6 +25,15 @@ class WordController extends ApiController
         
     }
 
+    public function getBook($bookNum) {
+        try{
+            $word = Word::where('bookNum', $bookNum)->get();
+        } catch (\Exception $e) {
+            return $this->errorResponse('Database Error', $e);
+        }
+        return $this->successResponse($word);
+    }
+
     public function getChapter($bookNum, $chNum) {
         try{
             $word = Word::where('bookNum', $bookNum)->where('chNum', $chNum)->get();
