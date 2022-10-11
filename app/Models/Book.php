@@ -13,7 +13,7 @@ class Book extends Model
         'id',
         'name',
         'ab',
-        'canon',
+        'chapters',
         'category_id',
     ];
 }

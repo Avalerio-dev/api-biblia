@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->string('ab');
-            $table->tinyInteger('canon');
+            $table->tinyInteger('chapters');
             $table->tinyInteger('category')->index();
             $table->foreign('category')
                 ->references('id')->on('categories');

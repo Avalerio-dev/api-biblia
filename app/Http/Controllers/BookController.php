@@ -10,7 +10,7 @@ class BookController extends ApiController
 {
     public function index(Request $request, $filter = null){
         return DB::table('books')
-        ->select('books.id', 'books.name', 'books.ab', 'categories.id as category_id', 'categories.name as category_name')
+        ->select('books.id', 'books.name', 'books.ab', 'categories.id as category_id', 'categories.name as category_name', 'books.chapters')
         ->join('categories', 'books.category', '=', 'categories.id')
         ->get();
     }
