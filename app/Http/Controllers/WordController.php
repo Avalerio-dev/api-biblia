@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 use App\Models\Word;
 
@@ -34,14 +35,7 @@ class WordController extends ApiController
         return $this->successResponse($word);
     }
 
-    public function getChapter($bookNum, $chNum) {
-        try{
-            $word = Word::where('bookNum', $bookNum)->where('chNum', $chNum)->get();
-        } catch (\Exception $e) {
-            return $this->errorResponse('Database Error', $e);
-        }
-        return $this->successResponse($word);
-    }
+
 
     public function find($bookNum, $chNum, $verseNum) {
         try{

@@ -34,4 +34,18 @@ class BookController extends ApiController
         }
         return $this->successResponse($word);
     }
+
+    public function getChapter($bookNum, $chNum) {
+        try{
+            $verses = DB::table('words')
+            ->select('verseNum')
+            ->where('bookNum', $bookNum)
+            ->where('chNum', $chNum)
+            ->get();
+            //$word = Word::where('bookNum', $bookNum)->where('chNum', $chNum)->get();
+        } catch (\Exception $e) {
+            return $this->errorResponse('Database Error', $e);
+        }
+        return $this->successResponse($verses);
+    }
 }
