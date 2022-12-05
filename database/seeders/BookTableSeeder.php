@@ -25,7 +25,7 @@ class BookTableSeeder extends Seeder
         array('name' => 'Jueces', 'ab' => 'Jue','category' => 2, 'chapters' => 21),
         array('name' => 'Rut', 'ab' => 'Rut','category' => 2, 'chapters' => 4),
         array('name' => '1 Samuel', 'ab' => '1 Sam','category' => 2, 'chapters' => 31),
-        array('name' => '2 Samuel', 'ab' => '2 Sam','category' => 2, 'chapters' => 23),
+        array('name' => '2 Samuel', 'ab' => '2 Sam','category' => 2, 'chapters' => 24),
         array('name' => '1 Reyes', 'ab' => '1 Re','category' => 2, 'chapters' => 22),
         array('name' => '2 Reyes', 'ab' => '2 Re','category' => 2, 'chapters' => 25),        
         array('name' => '1 Crónicas', 'ab' => '1 Cr','category' => 2, 'chapters' => 29),
