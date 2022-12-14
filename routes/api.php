@@ -23,10 +23,11 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 //////////////    Words
 Route::get('/word', [WordController::class, 'index']);
-Route::get('/word/{book_id}', [WordController::class, 'getBook']);
+Route::get('/word/verses/{book_id}/{chapter_id}', [WordController::class, 'getVersesNumber']);
+Route::get('/word/{book_id}', [WordController::class, 'getBookWords']);
+Route::get('/word/{book_id}/{chapter_id}', [WordController::class, 'getChapter']);
 Route::get('/word/{book_id}/{chapter_id}/{verse_id}', [WordController::class, 'find']);
 
 //////////////    Books
 Route::get('/book', [BookController::class, 'index']);
 Route::get('/book/{id}', [BookController::class, 'show']);
-Route::get('/book/{book_id}/{chapter_id}', [BookController::class, 'getChapter']);

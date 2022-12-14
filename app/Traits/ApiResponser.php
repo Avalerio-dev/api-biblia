@@ -26,9 +26,4 @@ trait ApiResponser
     {
         return $this->successResponse($instance, $code);
     }
-
-   /* public function getFile(Model $instance = null, $code = 200)
-    {
-        return $this->successResponse($instance, $code);
-    }*/
 }
