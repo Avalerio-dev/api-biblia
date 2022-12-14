@@ -26,23 +26,23 @@ class BookController extends ApiController
         
     }
 
-    public function find($bookNum, $chNum, $verseNum) {
+    public function find($book_id, $chapter_id, $verse_id) {
         try{
-            $word = Word::where('bookNum', $bookNum)->where('chNum', $chNum)->where('verseNum', $verseNum)->first();
+            $word = Word::where('book_id', $book_id)->where('chapter_id', $chapter_id)->where('verse_id', $verse_id)->first();
         } catch (\Exception $e) {
             return $this->errorResponse('Database Error', 500);
         }
         return $this->successResponse($word);
     }
 
-    public function getChapter($bookNum, $chNum) {
+    public function getChapter($book_id, $chapter_id) {
         try{
             $verses = DB::table('words')
-            ->select('verseNum')
-            ->where('bookNum', $bookNum)
-            ->where('chNum', $chNum)
+            ->select('verse_id')
+            ->where('book_id', $book_id)
+            ->where('chapter_id', $chapter_id)
             ->get();
-            //$word = Word::where('bookNum', $bookNum)->where('chNum', $chNum)->get();
+            //$word = Word::where('book_id', $book_id)->where('chapter_id', $chapter_id)->get();
         } catch (\Exception $e) {
             return $this->errorResponse('Database Error', $e);
         }

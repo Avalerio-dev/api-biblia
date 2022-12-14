@@ -12,8 +12,8 @@ class Word extends Model
     protected $fillable = [
         'wordId',
         'word',
-        'bookNum',
-        'chNum',
-        'verseNum',
+        'book_id',
+        'chapter_id',
+        'verse_id',
     ];
 }

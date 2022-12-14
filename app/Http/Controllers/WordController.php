@@ -26,9 +26,9 @@ class WordController extends ApiController
         
     }
 
-    public function getBook($bookNum) {
+    public function getBook($book_id) {
         try{
-            $word = Word::where('bookNum', $bookNum)->get();
+            $word = Word::where('book_id', $book_id)->get();
         } catch (\Exception $e) {
             return $this->errorResponse('Database Error', $e);
         }
@@ -37,9 +37,9 @@ class WordController extends ApiController
 
 
 
-    public function find($bookNum, $chNum, $verseNum) {
+    public function find($book_id, $chapter_id, $verse_id) {
         try{
-            $word = Word::where('bookNum', $bookNum)->where('chNum', $chNum)->where('verseNum', $verseNum)->first();
+            $word = Word::where('book_id', $book_id)->where('chapter_id', $chapter_id)->where('verse_id', $verse_id)->first();
         } catch (\Exception $e) {
             return $this->errorResponse('Database Error', 500);
         }

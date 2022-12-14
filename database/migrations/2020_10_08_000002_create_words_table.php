@@ -14,13 +14,13 @@ return new class extends Migration
     public function up()
     {
         Schema::create('words', function (Blueprint $table) {
-            $table->id('wordId');
-            $table->string('word');
-            $table->tinyInteger('bookNum')->index();
-            $table->foreign('bookNum')
-                ->references('id')->on('books');
-            $table->tinyInteger('chNum');
-            $table->tinyInteger('verseNum');
+            $table->id();
+            $table->tinyInteger('book_id')->index();
+            $table->foreign('book_id')
+            ->references('id')->on('books');
+            $table->tinyInteger('chapter_id');
+            $table->tinyInteger('verse_id');
+            $table->text('word');
         });
     }
 
