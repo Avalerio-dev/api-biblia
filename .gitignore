@@ -14,4 +14,4 @@ npm-debug.log
 yarn-error.log
 /.idea
 /.vscode
-spanish_reina.db
+spanish_reina.sqlite
