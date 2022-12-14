@@ -43,6 +43,10 @@ class WordController extends ApiController
         } catch (\Exception $e) {
             return $this->errorResponse('Database Error', 500);
         }
-        return $this->successResponse($word);
+        if($word){
+            return $this->successResponse($word);
+        } else {
+            return $this->errorResponse('Word not found', 404); 
+        }
     }
 }

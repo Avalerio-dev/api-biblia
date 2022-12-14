@@ -42,7 +42,6 @@ class BookController extends ApiController
             ->where('book_id', $book_id)
             ->where('chapter_id', $chapter_id)
             ->get();
-            //$word = Word::where('book_id', $book_id)->where('chapter_id', $chapter_id)->get();
         } catch (\Exception $e) {
             return $this->errorResponse('Database Error', $e);
         }
