@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Support\Facades\DB;
-
+use Illuminate\Http\Request;
 use App\Models\Word;
 
 class WordController extends ApiController
@@ -91,6 +91,20 @@ class WordController extends ApiController
             return $this->successResponse($verses);
         } else {
             return $this->errorResponse('Book not found', 404); 
+        }
+    }
+
+    public function search($query) {
+        try{
+             $words = Word::where('word', 'like', '%' . $query . '%')->get(); 
+        } catch (\Exception $e) {
+            return $this->$e;
+            return $this->errorResponse('Database Error', 500);
+        }
+        if(!$words->isEmpty()){
+            return $this->successResponse($words);
+        } else {
+            return $this->errorResponse('Word not found', 404); 
         }
     }
 }
